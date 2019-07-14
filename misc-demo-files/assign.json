@@ -14,6 +14,10 @@
         "locks": {
             "mode": "none"
         },
-        "parameters": {}
+        "parameters": {
+            "deployAuditingonSQLservers_storageAccountsResourceGroup": {
+                "value": "Diag-001"
+            }
+        }
     }
 }
