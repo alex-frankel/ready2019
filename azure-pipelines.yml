@@ -28,7 +28,7 @@ steps:
     azureSubscription: '$(spnName)' # this is the service connection
     BlueprintName: '$(blueprintName)'
     BlueprintPath: '.\$(blueprintName)'
-    PublishBlueprint: true
+    PublishBlueprint: true 
 
 # - task: AssignBlueprint@1
 #   displayName: 'Assign Azure Blueprint'
