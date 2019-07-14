@@ -8,7 +8,8 @@ Set-AzContext -SubscriptionId $subcriptionId
 # remove all blueprint assignments
 $bps = Get-AzBlueprintAssignment -SubscriptionId $subcriptionId
 foreach ($bp in $bps) {
-    Write-Host "Deleting blueprint assignment {0}" -f $bp.Name
+    $temp = "Deleting blueprint assignment {0}" -f $bp.Name
+    Write-Host $temp
     Remove-AzBlueprintAssignment -Name $bp.Name
 }
 
@@ -32,7 +33,7 @@ $policies = Get-AzPolicyAssignment
 foreach ($policy in $policies) {
     $temp = "Removing policy assignment: {0}" -f $policy.Name
     Write-Host $temp
-    Remove-AzPolicyAssignment -ResourceId $policy.ResourceId
+    Remove-AzPolicyAssignment -ResourceId $policy.ResourceId # TODO - also print display name..
 }
 
 # get-azroleassignment returns assignments at current OR parent scope`
@@ -43,6 +44,8 @@ foreach ($rbac in $rbacs) {
     if ($rbac.Scope -eq "/subscriptions/$subscriptionId") { # extra logic to make sure we are only removing role assignments at the target sub
         Write-Output "Found a role assignment to delete"
         Remove-AzRoleAssignment -InputObject $rbac
+    } else {
+        $temp = "NOT deleting role with scope {0}" -f $rbac.Scope
     }
 }
 
