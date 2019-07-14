@@ -30,16 +30,16 @@ steps:
     BlueprintPath: '.\$(blueprintName)'
     PublishBlueprint: true 
 
-# - task: AssignBlueprint@1
-#   displayName: 'Assign Azure Blueprint'
-#   inputs:
-#     azureSubscription: '$(spnName)'
-#     AssignmentName: 'pla-$(blueprintName)' # pla == PipeLinesAssignment
-#     BlueprintName: '$(blueprintName)'
-#     ParametersFile: '.\$(blueprintName)\assign.json'
-#     SubscriptionID: '$(subscriptionId)'
-#     Wait: true # waits for assignment to succeed or fail
-#     # version not specified because it defaults to latest published
+- task: AssignBlueprint@1
+  displayName: 'Assign Azure Blueprint'
+  inputs:
+    azureSubscription: '$(spnName)'
+    AssignmentName: 'pla-$(blueprintName)' # pla == PipeLinesAssignment
+    BlueprintName: '$(blueprintName)'
+    ParametersFile: '.\misc-demo-files\assign.json'
+    SubscriptionID: '$(subscriptionId)'
+    Wait: true # waits for assignment to succeed or fail
+    # version not specified because it defaults to latest published
 
 # - task: AzurePowerShell@4
 #   inputs:
