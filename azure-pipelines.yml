@@ -21,21 +21,3 @@ trigger:
 
 steps:
 
-- task: CreateBlueprint@1
-  displayName: 'Create Azure Blueprint'
-  inputs:
-    azureSubscription: '$(spnName)' # this is the service connection
-    BlueprintName: '$(blueprintName)'
-    BlueprintPath: '.\samples\$(blueprintName)'
-    PublishBlueprint: true
-
-- task: AssignBlueprint@1
-  displayName: 'Assign Azure Blueprint'
-  inputs:
-    azureSubscription: '$(spnName)'
-    AssignmentName: 'pla-$(blueprintName)' # pla == PipeLinesAssignment
-    BlueprintName: '$(blueprintName)'
-    ParametersFile: '.\samples\$(blueprintName)\assign.json'
-    SubscriptionID: '$(subscriptionId)'
-    Wait: true # waits for assignment to succeed or fail
-    # version not specified because it defaults to latest published
