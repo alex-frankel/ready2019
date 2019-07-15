@@ -14,11 +14,8 @@ trigger:
 
 steps:
 
-- task: AzurePowerShell@4
+- task: PowerShell@2
   inputs:
-    azureSubscription: 'pipelines-runner'
-    ScriptType: 'Inline'
-    Script: | 
-      Write-Output "hello-world"
-    FailOnStandardError: true
-    azurePowerShellVersion: 'LatestVersion'
+    targetType: 'inline'
+    script: |
+      Write-Host "Hello World"
