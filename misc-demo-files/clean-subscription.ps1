@@ -17,6 +17,8 @@ foreach ($bp in $bps) {
 # this will be required if locks were added in the assignment
 # todo
 
+# todo - removed resource locks that that ISO shared services blueprint is adding
+
 # get all rgs
 $rgs = Get-AzResourceGroup
 

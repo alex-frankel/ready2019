@@ -15,8 +15,20 @@ trigger:
 
 steps:
 
-- task: PowerShell@2
+- task: CreateBlueprint@1
   inputs:
-    targetType: 'inline'
-    script: |
-      Write-Host "Hello World"
+    azureSubscription: 'pipelines-runner'
+    BlueprintName: 'foundation-with-pci'
+    BlueprintPath: '.\foundation-with-pci'
+    AlternateLocation: false
+    PublishBlueprint: true
+
+- task: AssignBlueprint@1
+  inputs:
+    azureSubscription: 'pipelines-runner'
+    AssignmentName: 'assign-foundation-with-pci'
+    BlueprintName: 'foundation-with-pci'
+    ParametersFile: '.\foundation-with-pci\assign.json'
+    SubscriptionID: 'e93d3ee6-fac1-412f-92d6-bfb379e81af2'
+    Wait: true
+    Timeout: 500
