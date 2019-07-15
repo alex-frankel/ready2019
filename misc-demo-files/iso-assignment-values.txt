@@ -1,0 +1,4 @@
+ORG NAME: ALMAN-CO
+KEY VAULT ID: /subscriptions/e93d3ee6-fac1-412f-92d6-bfb379e81af2/resourceGroups/<ORGNAME>-sharedsvcs-kv-rg/providers/Microsoft.KeyVault/vaults/<ORGNAME>-sharedsvcs-kv
+PASSWORD: VDCP@55w0rd2@@1
+OBJECT ID: caeebed6-cfa8-45ff-9d8a-03dba4ef9a7d
