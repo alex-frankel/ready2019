@@ -1,6 +1,14 @@
 # subscription for demo: e93d3ee6-fac1-412f-92d6-bfb379e81af2 / Contoso IT - SH360 - Prod
 pool: 'Hosted VS2017'
 
+variables:
+ - name: spnName
+   value: 'pipelines-runner'
+ - name: blueprintName
+   value: 'foundation-with-pci'
+ - name: subscriptionId
+   value: 'e93d3ee6-fac1-412f-92d6-bfb379e81af2'
+
 trigger:
   branches:
     include:
@@ -15,20 +23,8 @@ trigger:
 
 steps:
 
-- task: CreateBlueprint@1
+- task: PowerShell@2
   inputs:
-    azureSubscription: 'pipelines-runner'
-    BlueprintName: 'foundation-with-pci'
-    BlueprintPath: '.\foundation-with-pci'
-    AlternateLocation: false
-    PublishBlueprint: true
-
-- task: AssignBlueprint@1
-  inputs:
-    azureSubscription: 'pipelines-runner'
-    AssignmentName: 'pla-foundation-with-pci'
-    BlueprintName: 'foundation-with-pci'
-    ParametersFile: '.\foundation-with-pci\assign.json'
-    SubscriptionID: 'e93d3ee6-fac1-412f-92d6-bfb379e81af2'
-    Wait: true
-    Timeout: 500
+    targetType: 'inline'
+    script: |
+      Write-Host "Hello World"
