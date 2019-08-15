@@ -81,14 +81,7 @@
           "displayName": "Allowed locations (Policy: Allowed locations for resource groups)",
           "strongType": "location"
         },
-        "allowedValues": [],
-        "defaultValue": [
-          "eastus",
-          "eastus2",
-          "westus",
-          "westus2",
-          "centralus"
-        ]
+        "allowedValues": []
       },
       "costCenter": {
         "type": "string",
@@ -97,14 +90,14 @@
         },
         "allowedValues": [
           "000",
-          "001",
-          "002"
-        ],
-        "defaultValue": "000"
-      }
+          "001"
+        ]
+      },
+      "resourceGroupName"
     },
     "resourceGroups": {
-      "Diagnostics": {
+      "ResourceGroup": {
+        "name": "[parameters('resourecGroupName')]",
         "dependsOn": []
       }
     }
