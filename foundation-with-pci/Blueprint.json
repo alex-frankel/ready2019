@@ -90,14 +90,19 @@
         },
         "allowedValues": [
           "000",
-          "001"
+          "001",
+          "002"
         ],
         "defaultValue": "001"
+      },
+      "resourceGroupName": {
+        "type": "string",
+        "defaultValue": "rg-001"
       }
     },
     "resourceGroups": {
       "Diagnostics": {
-        "name": "[parameters('resourecGroupName')]",
+        "name": "[parameters('resourceGroupName')]",
         "dependsOn": []
       }
     }
