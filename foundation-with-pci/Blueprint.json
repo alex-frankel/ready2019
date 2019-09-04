@@ -100,7 +100,7 @@
       }
     },
     "resourceGroups": {
-      "ResourceGroup": {
+      "Diagnostics": {
         "name": "[parameters('resourecGroupName')]",
         "dependsOn": []
       }
