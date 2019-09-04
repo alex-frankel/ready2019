@@ -81,7 +81,7 @@
           "displayName": "Allowed locations (Policy: Allowed locations for resource groups)",
           "strongType": "location"
         },
-        "allowedValues": []
+        "defaultValue": ["eastus", "eastus2"]
       },
       "costCenter": {
         "type": "string",
