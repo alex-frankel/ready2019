@@ -39,4 +39,4 @@ steps:
     ParametersFile: '.\$(blueprintName)\assign.json'
     SubscriptionID: $(subscriptionId)
     Wait: true
-    Timeout: 400
+    Timeout: 500
