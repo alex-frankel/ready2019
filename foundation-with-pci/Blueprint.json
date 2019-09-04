@@ -91,9 +91,13 @@
         "allowedValues": [
           "000",
           "001"
-        ]
+        ],
+        "defaultValue": "001"
       },
-      "resourceGroupName"
+      "resourceGroupName": {
+        "type": "string",
+        "defaultValue": "rg-001"
+      }
     },
     "resourceGroups": {
       "ResourceGroup": {
