@@ -97,7 +97,7 @@
       },
       "resourceGroupName": {
         "type": "string",
-        "defaultValue": "rg-001"
+        "defaultValue": "Diag-001"
       }
     },
     "resourceGroups": {
