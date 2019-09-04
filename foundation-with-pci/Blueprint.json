@@ -94,17 +94,10 @@
           "002"
         ],
         "defaultValue": "001"
-      },
-      "resourceGroupName": {
-        "type": "string",
-        "defaultValue": "Diag-001"
       }
     },
     "resourceGroups": {
-      "Diagnostics": {
-        "name": "[parameters('resourceGroupName')]",
-        "dependsOn": []
-      }
+      "Diagnostics": {}
     }
   }
 }
