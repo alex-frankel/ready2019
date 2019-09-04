@@ -7,7 +7,7 @@
         "blueprintId": "",
         "resourceGroups": {
             "Diagnostics": {
-                "name": "diag001",
+                "name": "Diag-001",
                 "location": "westus"
             }
         },
